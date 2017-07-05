@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>layDate Demo</title>
+<link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+<script src="../js/baselib/jquery-1.12.2.min.js"></script>
+<script src="../js/baselib/baselib.js"></script>
+<script src="../js/plugins/widgets/toolpage.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var limit = 20;
+        var totalRecords = 500;
+        var pageNo ;
+        if(!pageNo){
+            pageNo = 1;
+        }
+        // 个人中心分页
+        zWidgets.initToolPage({
+            pno : pageNo,
+            pagerid:"personalPage",
+            skin:"orange",
+            //总页码
+            limit : limit,
+            click : function(n){
+                // do something
+                //手动选中按钮
+                this.selectPage(n);
+                return false;
+            },
+            //总数据条数
+            totalRecords : totalRecords
+        });
+        // 工程集市分页
+        zWidgets.initToolPage({
+            pno : pageNo,
+            pagerid:"eMarketPage",
+            skin:"green",
+            //总页码
+            limit : limit,
+            click : function(n){
+                // do something
+                //手动选中按钮
+                this.selectPage(n);
+                return false;
+            },
+            //总数据条数
+            totalRecords : 15
+        });
+        // 悬赏令分页
+        zWidgets.initToolPage({
+            pno : pageNo,
+            pagerid:"biddingHallPage",
+            //总页码
+            limit : limit,
+            click : function(n){
+                // do something
+                //手动选中按钮
+                this.selectPage(n);
+                return false;
+            },
+            //总数据条数
+            totalRecords : 0
+        });
+        // 智创空间分页
+        zWidgets.initToolPage({
+            pno : pageNo,
+            pagerid:"imakerSpacePage",
+            //总页码
+            limit : limit,
+            skin:"blue",
+            click : function(n){
+                // do something
+                //手动选中按钮
+                this.selectPage(n);
+                return false;
+            },
+            //总数据条数
+            totalRecords : 80
+        });
+    })
+
+</script>
+</head>
+<body>
+<div id="personalPage" style="height:60px;"></div>
+<div id="biddingHallPage" style="height:60px;"></div>
+<div id="eMarketPage" style="height:60px;"></div>
+<div id="imakerSpacePage" style="height:60px;"></div>
+</body>
+</html>

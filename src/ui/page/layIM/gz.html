@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>雇主消息</title>
+    <link rel="stylesheet" type="text/css" href="../../js/plugins/layui/css/layui.css">
+<script src="../../js/plugins/layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.use('layim', function(layim){
+            layim.config({
+                //配置客户信息
+                mine: {
+                    "username": "雇主", //我的昵称
+                    "id": "gz", //我的ID
+                    "status": "online", //在线状态 online：在线、hide：隐身
+                    "remark": "在深邃的编码世界，做一枚轻盈的纸飞机", //我的签名
+                    "avatar": "http://res.layui.com/images/fly/avatar/00.jpg" //我的头像
+                },
+                //开启客服模式
+                brief: true
+            });
+            //建立WebSocket通讯
+            var socket = new WebSocket(encodeURI('ws://192.168.1.244/webSocket/message?user=gz'));
+
+            //发送一个消息
+//      socket.send('Hi Server, I am LayIM!');
+            //更多情况下，一般是传递一个对象
+//      socket.send(JSON.stringify({
+//        type: 'chatMessage' //随便定义，用于在服务端区分消息类型
+//        ,data: {}
+//      }));
+
+            //连接成功时触发
+            socket.onopen = function(){
+//        socket.send(user+'连接成功');
+            };
+            socket.onerror = function() {
+                //连接失败
+                layer.msg("连接失败");
+            };
+            socket.onclose = function() {
+                //连接断开
+                layer.msg("连接断开");
+            };
+            //监听发送消息
+            layim.on('sendMessage', function(data) {
+                //发送消息倒Socket服务
+                socket.send(JSON.stringify({
+                    type: 'chatMessage'
+                    ,content: data
+                }));
+            });
+
+
+
+            //监听收到的聊天消息
+            socket.onmessage = function(message) {
+//        layim.getMessage({
+//          username: res.name
+//          ,avatar: res.avatar
+//          ,id: res.id
+//          ,type: res.type
+//          ,content: res.content
+//        });
+                var messageJson = JSON.parse(message.data);
+                console.log("接受消息")
+                console.log(messageJson)
+                layim.getMessage(messageJson);
+            };
+
+            //监听收到的消息
+//      socket.onmessage = function(res){
+//        //res为接受到的值，如 {"type": "messageName", "data": {}}
+//      };
+
+//      另外还有onclose、onerror，分别是在链接关闭和出错时触发。
+
+            //基本上常用的就上面几个了，是不是非一般的简单？
+        });
+        function openIM(){
+            layui.use('layim', function(layim) {
+                layim.chat({
+                    name: '侠客' //名称
+                    ,type: 'kefu' //聊天类型
+                    ,avatar: 'http://tp1.sinaimg.cn/5619439268/180/40030060651/1' //头像
+                    ,id: "xk" //定义唯一的id方便你处理信息
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+<button type="button" onclick="openIM()">联系侠客</button>
+</body>
+</html>

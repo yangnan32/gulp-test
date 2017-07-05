@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>file</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+    <script src="../js/baselib/jquery-1.12.2.min.js"></script>
+    <script src="../js/baselib/baselib.js"></script>
+    <script src="../js/plugins/syswareUpload/spark-md5.js"></script>
+    <script src="../js/plugins/syswareUpload/syswareFileUpload.js"></script>
+    <script src="../js/plugins/widgets/mask.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+					var m;
+					var forceUseActiveX=true;
+                    var el_obj = $("#file");
+                    if (forceUseActiveX) {
+                        el_obj = $("#button");
+                    }
+                    el_obj.click(function () {
+                        var fileName = "";
+                        $(this).SyswareFileUpload({
+                            forceUseActiveX: forceUseActiveX,
+                            fsdUrl: 'http://192.168.4.87:8082/fileServerDiscovery/rest/getServer_j.do',
+                            onCheckProgressChange: function (param) {
+                                $("#mask").html("文件完整性校验中:" + param.progress + "%");
+                            },
+                            onGetMD5CodeProgressChange: function (param) {
+                                $("#mask").html("文件哈希值计算中:" + param.progress + "%");
+                            },
+                            onSelectChange: function (param) {
+                                fileName = param.fileName;
+                                if(!$("#mask")[0]){
+                                   
+                                }
+                            },
+                            onUploadFinish: function (param) {
+                                if(!param.success){
+                                 
+                                    alert("上传失败，上传过程中有数据丢失!");
+                                    return;
+                                }
+										alert(param.fileId);
+								$("#download").text(fileName);
+								$("#download").attr("href","http://192.168.4.87:8081/download/?ID="+param.fileId);
+                                
+
+                            },
+                            onUploadProgressChange: function (param) {
+                                $("#mask").html("正在上传中:" + param.progress + "%");
+                            }
+
+                        })
+
+                    })
+
+        })
+    </script>
+</head>
+
+<body>
+<div id="monitor"></div>
+<form id="myform">
+    <input type="button" id="button" value="插件方式"/>
+   <!-- <input type="file" value="aa" id="file">
+	-->
+	<div id="mask"></div>
+		<a id="download" href=""></a>
+</form>
+
+</body>
+
+</html>

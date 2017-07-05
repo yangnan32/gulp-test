@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>layDate Demo</title>
+<link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+<script src="../js/baselib/jquery-1.12.2.min.js"></script>
+<script src="../js/baselib/baselib.js"></script>
+<script src="../js/plugins/widgets/selectInput.js"></script>
+<script type="text/javascript">
+    $(function(){
+// 初始多选搜索下拉列表
+        var $that = $("#searchLayout1");
+        if ($that.attr("data-parserFlag")  && $that.attr("data-parserFlag")  != "false") return false;
+        zWidgets.selectInput({
+            id : $that.data("id"),
+            url: $that.data("url"),
+            tagUrl: $that.data("tagurl"),
+            key: $that.data("key"),
+            dataName: $that.data("dataname"),
+            dataRoot: $that.data("dataroot"),
+            columns: $that.data("columns"),
+            filterId: $that.data("filterid"),    // 定制过滤名称limitId
+            vals: $that.data("vals"),            // 回显数据的key值
+            valTexts: $that.data("valtexts"),    // 回显数据的value值
+            maxLength: $that.data("maxlength"),
+            height: $that.data("height"),
+            tooltipCls: $that.data("tooltipcls"),
+            useToolPage: $that.data("usetoolpage"),
+            textAlign: $that.data("textalign")
+        })
+    })
+
+</script>
+</head>
+<body id="body">
+<div style="height:100px;">
+<div id="searchLayout1" class="widget-selectInput" data-id="searchInputId1" data-url="ajax_select_data.jsp" data-tagUrl="ajax_select_data.jsp" data-key="keyValue" data-dataname="roledata" data-height="200" data-columns="[{showValue:true,dataIndex:'name'},{dataIndex:'department'}]" data-maxlength="7" data-vals="a,b,c" data-valtexts="aa,bb,cc" data-textalign="center" hotkeyflag="true">
+    <div class="uiframe-mainCon-search" id="searchInputId1Parent" style="width:400px;">
+        <input type="hidden" class="syswareComboxInput " maxlength="7" id="searchInputId1" value="a,b,c" name="searchcombo">
+        <input type="text" id="searchInputId1Input" emptytext="搜索条件" value="" class="uiframe-search-text " style="width: 10px;">
+    </div>
+    <div id="searchInputId1Btn" class="syswareSearchInput uiframe-search-btn" tabindex="0"></div>
+</div>
+</div>
+<pre style="font-size:14px;">
+        // html代码
+        &lt;div id="searchLayout" class="widget-selectInput" data-id="searchInputId" data-url="ajax_select_data.htm" data-tagUrl="ajax_select_data.jsp" data-key="keyValue"
+        data-dataname="roledata" data-height="200" data-columns="[{showValue:true,dataIndex:'name'},{dataIndex:'department'}]"
+        data-maxlength="7" data-vals="a,b,c" data-valtexts="aa,bb,cc" data-textalign="center" hotkeyflag="true"&gt;
+            &lt;div class="uiframe-mainCon-search" id="searchInputIdParent" style="width:400px;"&gt;
+                &lt;input type="hidden" class="syswareComboxInput " maxlength="7" id="searchInputId" value="a,b,c" name="searchcombo"&gt;
+                &lt;input type="text" id="searchInputIdInput" emptytext="搜索条件" value="" class="uiframe-search-text " style="width: 10px;"&gt;
+            &lt;/div&gt;
+            &lt;div id="searchInputIdBtn" class="syswareSearchInput uiframe-search-btn" tabindex="0"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        // js代码
+        var $that = $("searchLayout");
+        zWidgets.selectInput({
+            id : $that.data("id"),
+            url: $that.data("url"),
+            tagUrl: $that.data("tagurl"),
+            key: $that.data("key"),
+            dataName: $that.data("dataname"),
+            dataRoot: $that.data("dataroot"),
+            columns: $that.data("columns"),
+            filterId: $that.data("filterid"),    // 定制过滤名称limitId
+            vals: $that.data("vals"),            // 回显数据的key值
+            valTexts: $that.data("valtexts"),    // 回显数据的value值
+            maxLength: $that.data("maxlength"),
+            height: $that.data("height"),
+            tooltipCls: $that.data("tooltipcls"),
+            textAlign: $that.data("textalign")
+        })
+
+
+        // 返回数据格式
+        {"recordtotal":15,
+        "resultSet":[{
+        "keyValue":"asdas","name":"陈明湖","department":"软件部"
+        },{
+        "keyValue":"sss","name":"孙玉芬","department":"销售部"
+        },{
+        "keyValue":"www","name":"周淑丽","department":"管理部"
+        },{
+        "keyValue":4,"name":"李明涛","department":"管理部"
+        },{
+        "keyValue":5,"name":"赵武合","department":"销售部"
+        },{
+        "keyValue":6,"name":"秦太原","department":"软件部"
+        },{
+        "keyValue":7,"name":"李立明","department":"销售部"
+        },{
+        "keyValue":8,"name":"赵友婷","department":"管理部"
+        },{
+        "keyValue":9,"name":"陈明湖","department":"管理部"
+        },{
+        "keyValue":10,"name":"孙玉芬","department":"销售部"
+        },{
+        "keyValue":11,"name":"周淑丽","department":"软件部"
+        },{
+        "keyValue":12,"name":"吴雨涵","department":"销售部"
+        },{
+        "keyValue":13,"name":"马征宇","department":"管理部"
+        },{
+        "keyValue":14,"name":"张李汉","department":"管理部"
+        },{
+        "keyValue":15,"name":"杨宇峰","department":"销售部"
+        }]
+        }
+
+
+
+</pre>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>评价(打星)Demo</title>
+<link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+<script src="../js/baselib/jquery-1.12.2.min.js"></script>
+<script src="../js/baselib/baselib.js"></script>
+<script src="../js/plugins/widgets/widgets.js"></script>
+</head>
+<body>
+<div style="width:500px;height:100px;margin:20px 100px;">
+	<div>
+		评价:
+		<span class="widget-star" data-suffix="分">
+			<b val="1" text="1" class="starOn"></b>
+			<b val="2" text="2" class="starOn"></b>
+			<b val="3" text="3" class="starOn"></b>
+			<b val="4" text="4"></b>
+			<b val="5" text="5"></b>
+			<span class="starShowText"><span class="starVal" val="3">3</span>分</span>
+			<input type="hidden" />
+		</span>
+	</div>
+	<div>
+		评价:
+		<span class="widget-star widgetStar" data-suffix="分">
+			<b val="1" text="1"></b>
+			<b val="2" text="2"></b>
+			<b val="3" text="3"></b>
+			<b val="4" text="4"></b>
+			<b val="5" text="5"></b>
+			<span class="starShowText"></span>
+			<input type="hidden" />
+		</span>
+	</div>
+	<div>
+		评价:
+		<span class="widget-star widgetStar" data-suffix="">
+			<b text="很差" val="1"></b>
+			<b text="较差" val="2"></b>
+			<b text="还行" val="3"></b>
+			<b text="推荐" val="4"></b>
+			<b text="力推" val="5"></b>
+			<span class="starShowText"></span>
+		</span>
+	</div>
+</div>
+</body>
+</html>

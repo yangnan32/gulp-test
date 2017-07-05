@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layDate Demo</title>
+    <link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+    <script src="../js/baselib/jquery-1.12.2.min.js"></script>
+    <script src="../js/baselib/baselib.js"></script>
+    <script src="../js/plugins/widgets/mask.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#maskWindowbtn").on("click", function(){
+                zWidgets.mask.show({});
+                setTimeout(function(){
+                    zWidgets.mask.hide();
+                },2000);
+            });
+            $("#maskdivbtn").on("click", function(){
+                zWidgets.mask.show({id:"maskdiv",zindex:400});
+            });
+            $("#maskdivbtn1").on("click", function(){
+                zWidgets.mask.hide({id:"maskdiv"});
+            });
+
+            $("#maskdivcontentbtn").on("click", function(){
+                zWidgets.mask.show({id:"maskdivcontent", loadText:"正在提交中......"});
+                setTimeout(function(){
+                    zWidgets.mask.hide({id:"maskdivcontent"});
+                },2000);
+
+            });
+
+            $("#maskdivcontentbtn2").on("click", function(){
+                zWidgets.mask.show({id:"maskdivcontent", loadText:"正在提交中......",skin:"2"});
+                setTimeout(function(){
+                    zWidgets.mask.hide({id:"maskdivcontent"});
+                },2000);
+
+            });
+
+            var maskObject;
+            $("#maskdivbtn3").on("click", function(){
+                zWidgets.mask.show({id:"maskdiv4",zindex:400});
+            });
+            $("#maskdivbtn4").on("click", function(){
+                zWidgets.mask.hide({id:"maskdiv4"});
+            });
+        })
+    </script>
+</head>
+<body id="body">
+<div style="padding:10px;" id="mask">
+    <div style="margin:10px 0 0 20px;"><button type="button" class="uiframe-button" id="maskWindowbtn">遮罩窗口2秒钟</button></div>
+    <br/>
+
+    <div style="margin-left: 20px;">
+        <button type="button" class="uiframe-button" id="maskdivbtn">增加遮罩</button>
+        <button type="button" class="uiframe-button" id="maskdivbtn1">去除遮罩</button>
+    </div>
+
+    <div style="border: 1px solid #d1e4fd;width: 300px;height: 300px;margin-left: 20px;margin-top: 10px;" id="maskdiv"></div>
+    <br/>
+
+    <div style="margin-left: 20px;">
+        <button type="button" class="uiframe-button" id="maskdivcontentbtn">遮罩层加内容</button>
+        <button type="button" class="uiframe-button" id="maskdivcontentbtn2">遮罩层加内容无样式</button>
+    </div>
+
+    <div style="border: 1px solid #d1e4fd;width: 300px;height: 300px;margin:10px 20px;padding:10px 0;" id="maskdivcontent"></div>
+    <br/>
+
+    <div style="margin-left: 20px;">
+        <button type="button" class="uiframe-button" id="maskdivbtn3">增加遮罩</button>
+        <button type="button" class="uiframe-button" id="maskdivbtn4">去除遮罩</button>
+    </div>
+    <div style="border: 1px solid #d1e4fd;width: 300px;height: 300px;margin-left: 20px;margin-top: 10px;" id="maskdiv4"></div>
+    <br/>
+</div>
+</body>
+</html>

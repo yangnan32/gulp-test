@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+<title>JS实现倒计时(时、分，秒)</title> 
+<link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+<script src="../js/baselib/jquery-1.12.2.min.js"></script>
+<script src="../js/baselib/baselib.js"></script>
+<script type="text/javascript"> 
+var interval = 1000; 
+function ShowCountDown(year,month,day1,divname) 
+{ 
+var now = new Date(); 
+var endDate = new Date(year, month-1, day1); 
+var leftTime=endDate.getTime()-new Date().getTime(); 
+var countSecond = parseInt(leftTime/1000); 
+
+var day=Math.floor(countSecond/(60*60*24)); 
+var hour=Math.floor((countSecond-day*24*60*60)/3600); 
+var minute=Math.floor((countSecond-day*24*60*60-hour*3600)/60); 
+var second=Math.floor(countSecond-day*24*60*60-hour*3600-minute*60); 
+
+$("#divdown1").empty().html(day+"天"+hour+"小时"+minute+"分"+second+"秒");
+} 
+$(function(){
+    setInterval(function(){
+    ShowCountDown(2016,7,20,'divdown1');
+}, 1000);
+})
+</script> 
+</head> 
+<body> 
+<div id="divdown1" style="width:300px;height:100px;margin:50px auto;font-size:16px;"></div> 
+</body> 
+</html> 

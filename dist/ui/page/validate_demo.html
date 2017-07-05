@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>layDate Demo</title>
+<link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+<script src="../js/baselib/jquery-1.12.2.min.js"></script>
+<script src="../js/plugins/jquery-validation-1.15.0/jquery.validate.min.js"></script>
+<script src="../js/plugins/jquery-validation-1.15.0/additional-methods.min.js"></script>
+<script src="../js/plugins/jquery-validation-1.15.0/messages_zh.js"></script>
+<script type="text/javascript">
+$(function(){
+$("#form").validate({
+      rules: {
+        a: "required",
+        b: "required",
+        c: {
+          required: true,
+          minlength: 2
+        },
+        d: {
+          required: true,
+          maxlength: 5
+        },
+        e: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        a: "此项是必填项",
+        b: "此项是必填项",
+        c: {
+          required: "此项是必填项",
+          minlength: "最小长度为2"
+        },
+        d: {
+          required: "此项是必填项",
+          minlength: "最大长度为5"
+        },
+        e: "请输入邮箱地址"
+      }
+    });
+	$("#submit").on("click",function(){
+      $("#form").valid();
+    });
+    $("#cancel").on("click",function(){
+      $("#form").validate().resetForm();
+    });
+})
+</script>
+</head>
+<body>
+<form id="form" action="#">
+    <table style="width: 90%">
+      <tr>
+        <td style="width: 200px;">验证样例:</td>
+        <td><input type="text" id="a" name="a" /></td>
+      </tr>
+      <tr>
+        <td style="width: 200px;">验证样例:</td>
+        <td><input type="text" id="b" name="b" /></td>
+      </tr>
+      <tr>
+        <td style="width: 200px;">验证样例:</td>
+        <td><input type="text" id="c" name="c" /></td>
+      </tr>
+      <tr>
+        <td style="width: 200px;">验证样例:</td>
+        <td><input type="text" id="d" name="d" /></td>
+      </tr>
+      <tr>
+        <td style="width: 200px;">验证样例:</td>
+        <td><input type="text" id="e" name="e" /></td>
+      </tr>
+    </table>
+    <div><input type="button" id="submit" value="提交" />
+    <input type="button" id="cancel" value="取消"/></div>
+  </form>
+</body>
+</html>

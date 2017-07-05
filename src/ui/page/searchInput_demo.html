@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>widget-searchInput</title>
+<link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+<script src="../js/baselib/jquery-1.12.2.min.js"></script>
+<script src="../js/baselib/baselib.js"></script>
+<script src="../js/plugins/widgets/searchInput.js"></script>
+<script type="text/javascript">
+    $(function(){
+// 初始多选搜索下拉列表
+        var $that = $("#searchLayout1");
+        if ($that.attr("data-parserFlag")  && $that.attr("data-parserFlag")  != "false") return false;
+        zWidgets.searchInput({
+            id : $that.data("id"),
+            url: $that.data("url"),
+            key: $that.data("key"),
+            dataName: $that.data("dataname")
+        })
+    })
+
+</script>
+</head>
+<body id="body">
+<div style="height:200px;margin:20px;">
+<div id="searchLayout1" class="widget-searchInput" data-id="searchId" data-url="ajax_select_data.jsp" data-key="keyValue" data-dataname="roledata">
+    <input type="hidden" class="widgetsSearchInput" id="searchId" name="searchcombo">
+    <input type="text" emptyText="搜索条件" id="searchIdInput" class="widgets-searchInput-input" />
+    <div class="widgets-searchInput-delete widgetsSearchInputDelete"></div>
+</div>
+</div>
+<pre style="font-size:14px;">
+{
+"recordtotal":15,
+"resultSet":[
+{"keyValue":"asdas","name":"陈明湖","headImg":"/uiframe-2.9.6/images/blue/form/head.jpg","checked":true},
+{"keyValue":"asdas1","name":"陈明湖1","headImg":"/uiframe-2.9.6/images/blue/form/head.jpg","checked":false},
+{"keyValue":"asdas2","name":"陈明湖2","headImg":"/uiframe-2.9.6/images/blue/form/head.jpg","checked":true},
+{"keyValue":"asdas3","name":"陈明湖3","headImg":"/uiframe-2.9.6/images/blue/form/head.jpg","checked":false},
+{"keyValue":"asdas4","name":"陈明湖4","headImg":"/uiframe-2.9.6/images/blue/form/head.jpg"}
+]
+}
+
+
+
+</pre>
+</body>
+</html>
+

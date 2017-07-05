@@ -1,0 +1,45 @@
+{
+  "name": "gulp-test",
+  "version": "1.0.0",
+  "description": "This is for study gulp project !",
+  "author": {
+    "name": "yangn",
+    "email": "6708880@qq.com"
+  },
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp dev",
+    "dev": "gulp dev",
+    "clean": "rimraf dist",
+    "build": "rimraf dist && gulp build"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-collector": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "imagemin-pngquant": "^5.0.1",
+    "jshint": "^2.9.5",
+    "run-sequence": "^2.0.0"
+  },
+  "dependencies": {
+    "gulp-cache": "^0.4.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-notify": "^3.0.0",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-collector": "^1.2.2",
+    "gulp-smushit": "^1.2.0",
+    "gulp-sync": "^0.1.4",
+    "gulp-uglify": "^3.0.0"
+  }
+}

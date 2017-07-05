@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layDate Demo</title>
+    <link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+    <script src="../js/baselib/jquery-1.12.2.min.js"></script>
+    <script src="../js/baselib/baselib.js"></script>
+    <script src="../js/plugins/syswareUpload/spark-md5.js"></script>
+    <script src="../js/plugins/syswareUpload/syswareFileUpload.js"></script>
+    <script src="../js/plugins/widgets/mask.js"></script>
+    <script src="../js/plugins/widgets/multifile.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#mainwow").find("div.widget-multiFile").each(function(){
+                var $that = $(this);
+                if ($that.attr("data-parserFlag")  && $that.attr("data-parserFlag")  != "false") return false;
+                zWidgets.multiFile({
+                    id : $that.data("id"),
+                    url : $that.data("url"),
+                    fileId : $that.data("fileid"),
+                    fileValueId : $that.data("filevalueid"),
+                    fileIdValue : $that.data("fileidvalue"),
+                    fileNameValue : $that.data("filenamevalue"),
+                    fileUlId : $that.data("fileulid"),
+                    maxLength : $that.data("maxlength"),
+                    autoLoad : $that.data("autoload")
+                })
+            });
+        })
+    </script>
+</head>
+<body id="body">
+    <div id="mainwow" style="margin: 20px  40px;">
+        <div class="uiframe-file-container widget-multiFile" id="fileabcdLayout" data-maxLength="3" data-id="abcd" data-fileUlId="fileUrl" data-url="192.168.4.27:8082" data-fileid="fileId" data-filevalueid="fileValueId" data-fileIdValue="111,222" data-fileNameValue="aaaa,bbb" data-autoload="true">
+            <input type="hidden" id="fileId" name="fileIds" value="">
+            <input type="hidden" id="fileValueId" name="fileValues" value="">
+            <span id="abcd" class="uiframe-module-btn uiframe-cancel-btn uiframe-button-file " style="position: relative;">添加附件</span>
+            <span class="file-reset" id="abcdClearBtn">清空</span>
+        </div>
+        <ul id="fileUrl" style="width:200px;">
+        </ul>
+    </div>
+</body>
+</html>

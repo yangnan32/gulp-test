@@ -1,0 +1,39 @@
+.icon-header{background:#3083eb;height:56px;}
+.icon-logo{float:left;background: url("../images/ui_icons/logo.png") 0 0 no-repeat;width:184px;height:32px;margin:12px 8px;overflow:hidden;}
+.icon-nav{float:left;height:56px;line-height:56px;}
+.icon-nav li{float:left;}
+.icon-nav a{display:block;height:56px;color:#fff;font-size:16px;text-decoration:none;padding:0 16px;border-left:1px solid #1968ca;border-right:1px solid #1968ca;background:#1d74e0;}
+.icon-link{float:right;margin-right:16px;height:56px;line-height:56px;}
+.icon-link a{color:#fff;font-size:16px;text-decoration:none;}
+.icon-classify-new,.icon-classify-edit,.icon-classify-delete{float:left;width:47px;cursor:pointer;margin-left:15px;}
+.icon-classify-new span{display:block;float:left;margin:16px 2px 16px 0;background:url(../images/ui_icons/ui_icon.png) 0 -622px no-repeat;height:16px;width:16px;color:#3d3d3d;}
+.icon-classify-edit span{display:block;float:left;margin:16px 2px 16px 0;background:url(../images/ui_icons/ui_icon.png) 0 1px no-repeat;height:16px;width:16px;color:#3d3d3d;}
+.icon-classify-delete span{display:block;float:left;margin:16px 2px 16px 0;background:url(../images/ui_icons/ui_icon.png) 0 -58px no-repeat;height:16px;width:16px;color:#3d3d3d;}
+.icon-classify-list{}
+.select{background:#e3f0fc;color:#5398ee;}
+.icon-classify-list li{width:100%;height:42px;line-height:42px;cursor:pointer;}
+.icon-classify-list li:hover{background:#e3f0fc;}
+.icon-classify-list span{display:block;float:left;margin:10px 6px 10px 15px;background:url(../images/ui_icons/icon.png) 0 4px no-repeat;height:22px;width:22px;}
+.select span{background-position:-22px 4px;}
+.icon-icon-new,.icon-icon-download,.icon-icon-delete,.icon-icon-makeCss{float:left;width:47px;height:30px;line-height:30px;cursor:pointer;margin-right:15px;}
+.icon-icon-new{width:76px;background:#30b3eb;color:#fff;border-radius:3px;}
+.icon-icon-new span{display:block;float:left;margin:7px 6px 7px 14px;background:url(../images/ui_icons/ui_icon.png) -25px -593px no-repeat;height:16px;width:16px;}
+.icon-icon-download span{display:block;float:left;margin:7px 2px 7px 0;background:url(../images/ui_icons/ui_icon.png) 0 -88px no-repeat;height:16px;width:16px;}
+.icon-icon-edit{float:left;width:30px;height:30px;cursor:pointer;margin-right:10px;}
+.icon-icon-edit span{display:block;float:left;margin:7px 2px 7px 10px;background:url(../images/ui_icons/ui_icon.png) 0 1px no-repeat;height:16px;width:16px;}
+.icon-icon-delete span{display:block;float:left;margin:7px 2px 7px 0;background:url(../images/ui_icons/ui_icon.png) 0 -58px no-repeat;height:16px;width:16px;}
+.icon-icon-makeCss span{display:block;float:left;margin:7px 2px 7px 0;background:url(../images/ui_icons/ui_icon.png) 0 -740px no-repeat;height:16px;width:16px;}
+.icon-icon-search{float:right;height:30px;line-height:30px;width:208px;}
+.icon-icon-searchIcon{display:block;width:25px;height:25px;float:right;border:1px solid #e5ebf1;border-left:none;cursor:pointer;}
+.icon-icon-search a{background:url(../images/ui_icons/ui_icon.png) 0 -355px no-repeat;float:left;margin:5px 4px 4px 5px;display:block;height:16px;width:16px;}
+.icon-icon-advancedSearch{float:right;width:50px;padding:0 5px;margin:2px 0 0 5px;height:25px;line-height:25px;background:#30b3eb;color:#fff;border-radius:2px;cursor:pointer;}
+.itemAddNote-keyWordText{width:80%;float:left;word-wrap:break-word;}
+.allkeyWord{float:left;}
+.addKeyWordIcon{width:16px;cursor:pointer;height:16px;margin:4px;float:left;background:url("../images/ui_icons/addTagIcon.png") center center no-repeat;}
+
+/* 覆写界面框架css */
+.uiframe-jspGrid-header{background:#f6fafd;;color:#888;}
+.uiframe-two-row-left{background:#f6fafd;height:100%;}
+.uiframe-jspGrid-header td,.uiframe-jspGrid-main td{height:30px;border-bottom:1px solid #e5ebf1;}
+.jspGridTrSelect{background:#f6fafd;}
+.jspGridTrHover{background:#f6fafd;}

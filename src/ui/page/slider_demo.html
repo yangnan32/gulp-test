@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>layDate Demo</title>
+<link rel="stylesheet" type="text/css" href="../css/widgets.css" />
+<script src="../js/baselib/jquery-1.12.2.min.js"></script>
+<script src="../js/plugins/slider/slider.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var bannerSlider = new Slider($('#banner_tabs'), {
+          time: 5000,
+          delay: 400,
+          event: 'hover',
+          auto: true,
+          mode: 'fade',
+          controller: $('#bannerCtrl'),
+          activeControllerCls: 'active'
+        });
+        $('#banner_tabs .flex-prev').click(function() {
+          bannerSlider.prev()
+        });
+        $('#banner_tabs .flex-next').click(function() {
+          bannerSlider.next()
+        });
+    })
+
+</script>
+</head>
+<body style="background:#cccccc;">
+<div id="banner_tabs" class="flexslider">
+    <ul class="slides">
+      <li>
+        <a title="" target="_blank" href="#">
+          <img width="1920" height="350" alt="" style="background: url(images/banner.jpg) no-repeat center;" src="images/alpha.png">
+        </a>
+      </li>
+      <li>
+        <a title="" href="#">
+          <img width="1920" height="350" alt="" style="background: url(images/banner.jpg) no-repeat center;" src="images/alpha.png">
+        </a>
+      </li>
+      <li>
+        <a title="" href="#">
+          <img width="1920" height="350" alt="" style="background: url(images/banner.jpg) no-repeat center;" src="images/alpha.png">
+        </a>
+      </li>
+    </ul>
+    <ul class="flex-direction-nav">
+      <li><a class="flex-prev" href="javascript:void(0);">Previous</a></li>
+      <li><a class="flex-next" href="javascript:void(0);">Next</a></li>
+    </ul>
+    <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+      <li class="active"><a>1</a></li>
+      <li><a>2</a></li>
+      <li><a>3</a></li>
+    </ol>
+  </div>
+</body>
+</html>
